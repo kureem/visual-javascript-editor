@@ -187,8 +187,8 @@ class Editor extends JSContainer {
         this.panels.getViewsContainer().addChild(this.blocksPanel);
     }
     addBlocks(__var_blocks) {
-        for (let index121 = 0; index121 < __var_blocks.length; index121++) {
-            let block = __var_blocks[index121];
+        for (let index129 = 0; index129 < __var_blocks.length; index129++) {
+            let block = __var_blocks[index129];
             {
                 this.blocksPanel.addBlock(block);
             }
@@ -215,8 +215,8 @@ class Editor extends JSContainer {
         this.addCommand$java_lang_String$java_lang_String$java_lang_String$java_lang_String$jsweet_lang_Function(section, name, title, faButtonName, event);
     }
     addCommands$java_lang_String$jsweet_lang_Array(section, commands) {
-        for (let index122 = 0; index122 < commands.length; index122++) {
-            let command = commands[index122];
+        for (let index130 = 0; index130 < commands.length; index130++) {
+            let command = commands[index130];
             {
                 this.addCommand$java_lang_String$jsweet_lang_Object(section, command);
             }
@@ -234,8 +234,8 @@ class Editor extends JSContainer {
     }
     addCommands$jsweet_lang_Object(commands) {
         let sections = Object.keys(commands);
-        for (let index123 = 0; index123 < sections.length; index123++) {
-            let section = sections[index123];
+        for (let index131 = 0; index131 < sections.length; index131++) {
+            let section = sections[index131];
             {
                 let arCommands = commands[section];
                 this.addCommands$java_lang_String$jsweet_lang_Array(section, arCommands);
@@ -263,8 +263,8 @@ class Editor extends JSContainer {
         this.addTextToolbarAction$java_lang_String$java_lang_String$java_lang_String$jsweet_lang_Function(name, title, innerHtml, event);
     }
     addTextToolbarActions(actions) {
-        for (let index124 = 0; index124 < actions.length; index124++) {
-            let action = actions[index124];
+        for (let index132 = 0; index132 < actions.length; index132++) {
+            let action = actions[index132];
             {
                 this.addTextToolbarAction$jsweet_lang_Object(action);
             }
@@ -294,8 +294,8 @@ class Editor extends JSContainer {
         this.addBlockToolbarAction$java_lang_String$java_lang_String$java_lang_String$jsweet_lang_Function(name, title, iconName, event);
     }
     addBlockToolbarActions(actions) {
-        for (let index125 = 0; index125 < actions.length; index125++) {
-            let action = actions[index125];
+        for (let index133 = 0; index133 < actions.length; index133++) {
+            let action = actions[index133];
             {
                 this.addBlockToolbarAction$jsweet_lang_Object(action);
             }
@@ -489,15 +489,15 @@ var tools;
             let offset = this.addChild("gjs-offset-v", "div", "gjs-offset-v");
             let marginName = offset.addChild("gjs-marginName", "div", "gjs-marginName");
             let positions = ["top", "bottom", "left", "right"];
-            for (let index126 = 0; index126 < positions.length; index126++) {
-                let position = positions[index126];
+            for (let index134 = 0; index134 < positions.length; index134++) {
+                let position = positions[index134];
                 {
                     marginName.addChild(position, "div", "gjs-margin-v-el gjs-margin-v-" + position);
                 }
             }
             let paddingName = offset.addChild("gjs-paddingName", "div", "gjs-paddingName");
-            for (let index127 = 0; index127 < positions.length; index127++) {
-                let position = positions[index127];
+            for (let index135 = 0; index135 < positions.length; index135++) {
+                let position = positions[index135];
                 {
                     paddingName.addChild(position, "div", "gjs-padding-v-el gjs-padding-v-" + position);
                 }
@@ -533,8 +533,8 @@ var tools;
             super(name, "div");
             /*private*/ this.resizerC = new JSContainer("c", "div");
             this.resizerC.addClass("gjs-resizer-c");
-            for (let index128 = 0; index128 < Resizer.POSITIONS_$LI$().length; index128++) {
-                let s = Resizer.POSITIONS_$LI$()[index128];
+            for (let index136 = 0; index136 < Resizer.POSITIONS_$LI$().length; index136++) {
+                let s = Resizer.POSITIONS_$LI$()[index136];
                 {
                     this.resizerC.addChild(s, "i", "gjs-resizer-h-" + s);
                 }
