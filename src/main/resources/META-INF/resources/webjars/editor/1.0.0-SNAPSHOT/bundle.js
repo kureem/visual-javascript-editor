@@ -1,4 +1,4 @@
-/* Generated from Java with JSweet 2.3.0 - http://www.jsweet.org */
+/* Generated from Java with JSweet 3.0.0 - http://www.jsweet.org */
 var blocks;
 (function (blocks) {
     class Block extends JSContainer {
@@ -8,12 +8,10 @@ var blocks;
                 super(name, "div");
                 this.html = new JSContainer("html", "div");
                 this.title = new JSContainer("title", "div");
-                (() => {
-                    this.addClass("gjs-block gjs-one-bg gjs-four-color-h");
-                    this.addChild(this.html);
-                    this.title.addClass("gjs-block-label");
-                    this.addChild(this.title);
-                })();
+                this.addClass("gjs-block gjs-one-bg gjs-four-color-h");
+                this.addChild(this.html);
+                this.title.addClass("gjs-block-label");
+                this.addChild(this.title);
             }
             else if (((name != null && name instanceof Object) || name === null)) {
                 let __args = arguments;
@@ -24,29 +22,30 @@ var blocks;
                     super(name, "div");
                     this.html = new JSContainer("html", "div");
                     this.title = new JSContainer("title", "div");
-                    (() => {
-                        this.addClass("gjs-block gjs-one-bg gjs-four-color-h");
-                        this.addChild(this.html);
-                        this.title.addClass("gjs-block-label");
-                        this.addChild(this.title);
-                    })();
+                    this.addClass("gjs-block gjs-one-bg gjs-four-color-h");
+                    this.addChild(this.html);
+                    this.title.addClass("gjs-block-label");
+                    this.addChild(this.title);
                 }
+                this.html = new JSContainer("html", "div");
+                this.title = new JSContainer("title", "div");
                 (() => {
                     this.setBlock(block);
+                    this.addClass("hello");
                 })();
             }
             else
                 throw new Error('invalid overload');
         }
         setBlock(obj) {
-            let title = obj["title"];
+            const title = obj["title"];
             this.title.setHtml(title);
             if (obj.hasOwnProperty("iconName")) {
-                let iconName = obj["iconName"];
+                const iconName = obj["iconName"];
                 this.addClass(iconName);
             }
             else if (obj.hasOwnProperty("html")) {
-                let html = obj["html"];
+                const html = obj["html"];
                 this.html.setHtml(html);
             }
         }
@@ -59,8 +58,8 @@ var blocks;
     class BlockCategory extends JSContainer {
         constructor(name) {
             super(name, "div");
-            /*private*/ this.title = new JSContainer("title", "div");
-            /*private*/ this.container = new JSContainer("container", "div");
+            this.title = new JSContainer("title", "div");
+            this.container = new JSContainer("container", "div");
             this.addClass("gjs-block-category");
             this.title.addClass("gjs-title");
             this.addChild(this.title);
@@ -138,14 +137,14 @@ var blocks;
     class BlocksPanel extends JSContainer {
         constructor(name) {
             super(name, "div");
-            /*private*/ this.categories = new JSContainer("categories", "div");
+            this.categories = new JSContainer("categories", "div");
             this.addClass("gjs-blocks-cs gjs-one-bg gjs-two-color");
             this.categories.addClass("gjs-block-categories");
             this.addChild(this.categories);
             this.addCategory("basic", "Basic");
         }
         addCategory(name, title) {
-            let category = new blocks.BlockCategory(name);
+            const category = new blocks.BlockCategory(name);
             category.setTitle(title);
             this.categories.addChild(category);
             return category;
@@ -168,12 +167,15 @@ var blocks;
 class Editor extends JSContainer {
     constructor(name, tag) {
         super(name, "div");
-        if (this.canvas === undefined)
+        if (this.canvas === undefined) {
             this.canvas = null;
-        if (this.panels === undefined)
+        }
+        if (this.panels === undefined) {
             this.panels = null;
-        if (this.blocksPanel === undefined)
+        }
+        if (this.blocksPanel === undefined) {
             this.blocksPanel = null;
+        }
         this.addClass("gjs-editor gjs-one-bg gjs-two-color");
         this.addClass("editor");
         this.init();
@@ -208,10 +210,10 @@ class Editor extends JSContainer {
             throw new Error('invalid overload');
     }
     addCommand$java_lang_String$jsweet_lang_Object(section, command) {
-        let name = command["name"];
-        let title = command["title"];
-        let faButtonName = command["iconName"];
-        let event = command["action"];
+        const name = command["name"];
+        const title = command["title"];
+        const faButtonName = command["iconName"];
+        const event = command["action"];
         this.addCommand$java_lang_String$java_lang_String$java_lang_String$java_lang_String$jsweet_lang_Function(section, name, title, faButtonName, event);
     }
     addCommands$java_lang_String$jsweet_lang_Array(section, commands) {
@@ -233,11 +235,11 @@ class Editor extends JSContainer {
             throw new Error('invalid overload');
     }
     addCommands$jsweet_lang_Object(commands) {
-        let sections = Object.keys(commands);
+        const sections = Object.keys(commands);
         for (let index131 = 0; index131 < sections.length; index131++) {
             let section = sections[index131];
             {
-                let arCommands = commands[section];
+                const arCommands = commands[section];
                 this.addCommands$java_lang_String$jsweet_lang_Array(section, arCommands);
             }
         }
@@ -256,10 +258,10 @@ class Editor extends JSContainer {
             throw new Error('invalid overload');
     }
     addTextToolbarAction$jsweet_lang_Object(action) {
-        let name = action["name"];
-        let title = action["title"];
-        let innerHtml = action["innerHtml"];
-        let event = action["action"];
+        const name = action["name"];
+        const title = action["title"];
+        const innerHtml = action["innerHtml"];
+        const event = action["action"];
         this.addTextToolbarAction$java_lang_String$java_lang_String$java_lang_String$jsweet_lang_Function(name, title, innerHtml, event);
     }
     addTextToolbarActions(actions) {
@@ -287,10 +289,10 @@ class Editor extends JSContainer {
             throw new Error('invalid overload');
     }
     addBlockToolbarAction$jsweet_lang_Object(action) {
-        let name = action["name"];
-        let title = action["title"];
-        let iconName = action["iconName"];
-        let event = action["action"];
+        const name = action["name"];
+        const title = action["title"];
+        const iconName = action["iconName"];
+        const event = action["action"];
         this.addBlockToolbarAction$java_lang_String$java_lang_String$java_lang_String$jsweet_lang_Function(name, title, iconName, event);
     }
     addBlockToolbarActions(actions) {
@@ -336,7 +338,7 @@ EditorCanvas["__interfaces"] = ["framework.components.api.Renderable"];
 class EditorPanelButton extends JSContainer {
     constructor(name) {
         super(name, "div");
-        /*private*/ this.buttons = new JSContainer("buttons", "div");
+        this.buttons = new JSContainer("buttons", "div");
         this.addClass("gjs-pn-panel");
         this.addClass("gjs-pn-" + name);
         this.addClass("gjs-one-bg gjs-two-color");
@@ -344,7 +346,7 @@ class EditorPanelButton extends JSContainer {
         this.addChild(this.buttons);
     }
     addButton(name, title, faButtonName, event) {
-        let btn = new JSContainer(name, "span");
+        const btn = new JSContainer(name, "span");
         btn.setAttribute("title", title);
         btn.addClass("gjs-pn-btn");
         this.buttons.addChild(btn);
@@ -370,7 +372,7 @@ EditorPanelButton["__interfaces"] = ["framework.components.api.Renderable"];
          * @param {Event} evt
          */
         performAction(source, evt) {
-            let editor = (source.getAncestorWithClass("editor"));
+            const editor = (source.getAncestorWithClass("editor"));
             this.event(source, editor);
         }
     }
@@ -380,11 +382,11 @@ EditorPanelButton["__interfaces"] = ["framework.components.api.Renderable"];
 class EditorPanels extends JSContainer {
     constructor(name) {
         super(name, "div");
-        /*private*/ this.commands = new EditorPanelButton("commands");
-        /*private*/ this.options = new EditorPanelButton("options");
-        /*private*/ this.views = new EditorPanelButton("views");
-        /*private*/ this.devices = new EditorPanelButton("devices");
-        /*private*/ this.viewsContainer = new JSContainer("view-container", "div");
+        this.commands = new EditorPanelButton("commands");
+        this.options = new EditorPanelButton("options");
+        this.views = new EditorPanelButton("views");
+        this.devices = new EditorPanelButton("devices");
+        this.viewsContainer = new JSContainer("view-container", "div");
         this.addClass("gjs-pn-panels");
         this.addChild(this.commands);
         this.commands.addButton("emp", "", "em", null);
@@ -408,12 +410,12 @@ var tools;
     class BlockToolbar extends JSContainer {
         constructor(name) {
             super(name, "div");
-            /*private*/ this.actionBar = new JSContainer("actionBar", "div");
+            this.actionBar = new JSContainer("actionBar", "div");
             this.addClass("gjs-toolbar");
             this.addChild(this.actionBar);
         }
         addAction(name, title, iconName, event) {
-            let act = new JSContainer(name, "div").addClass("gjs-toolbar-item");
+            const act = new JSContainer(name, "div").addClass("gjs-toolbar-item");
             act.setAttribute("title", title);
             act.addClass("fa").addClass("fa-" + iconName);
             this.actionBar.addChild(act);
@@ -435,7 +437,7 @@ var tools;
              * @param {Event} evt
              */
             performAction(source, evt) {
-                let editor = (source.getAncestorWithClass("editor"));
+                const editor = (source.getAncestorWithClass("editor"));
                 this.event(source, editor);
             }
         }
@@ -447,9 +449,9 @@ var tools;
     class CanvasTools extends JSContainer {
         constructor(name) {
             super(name, "div");
-            /*private*/ this.placeholderTools = new tools.PlaceholderTools("placeholderTools");
-            /*private*/ this.selectTools = new tools.SelectTools("selectTools");
-            /*private*/ this.highlightTools = new tools.HighlightTools("highlightTools");
+            this.placeholderTools = new tools.PlaceholderTools("placeholderTools");
+            this.selectTools = new tools.SelectTools("selectTools");
+            this.highlightTools = new tools.HighlightTools("highlightTools");
             this.addClass("gjs-cv-canvas__tools");
             this.addChild(this.placeholderTools).addChild(this.selectTools).addChild(this.highlightTools);
         }
@@ -478,7 +480,7 @@ var tools;
     class HighlightTools extends JSContainer {
         constructor(name) {
             super(name, "div");
-            /*private*/ this.badge = null;
+            this.badge = null;
             this.addClass("gjs-tools");
             this.addChild("gjs-highlighter", "div", "gjs-highlighter");
             this.badge = this.addChild("gjs-badge", "div", "gjs-badge").addChild("gjs-badge__name", "div", "gjs-badge__name");
@@ -486,16 +488,16 @@ var tools;
             this.addChild("gjs-ghost", "div", "gjs-ghost");
             this.addChild("gjs-toolbar", "div", "gjs-toolbar");
             this.addChild("gjs-resizer", "div", "gjs-resizer");
-            let offset = this.addChild("gjs-offset-v", "div", "gjs-offset-v");
-            let marginName = offset.addChild("gjs-marginName", "div", "gjs-marginName");
-            let positions = ["top", "bottom", "left", "right"];
+            const offset = this.addChild("gjs-offset-v", "div", "gjs-offset-v");
+            const marginName = offset.addChild("gjs-marginName", "div", "gjs-marginName");
+            const positions = ["top", "bottom", "left", "right"];
             for (let index134 = 0; index134 < positions.length; index134++) {
                 let position = positions[index134];
                 {
                     marginName.addChild(position, "div", "gjs-margin-v-el gjs-margin-v-" + position);
                 }
             }
-            let paddingName = offset.addChild("gjs-paddingName", "div", "gjs-paddingName");
+            const paddingName = offset.addChild("gjs-paddingName", "div", "gjs-paddingName");
             for (let index135 = 0; index135 < positions.length; index135++) {
                 let position = positions[index135];
                 {
@@ -516,8 +518,9 @@ var tools;
     class PlaceholderTools extends JSContainer {
         constructor(name) {
             super(name, "div");
-            if (this.placeholder === undefined)
+            if (this.placeholder === undefined) {
                 this.placeholder = null;
+            }
             this.addClass("gjs-tools gjs-tools-gl");
             this.placeholder = this.addChild("placeholder", "div", "gjs-placeholder vertical");
             this.placeholder.setHtml("<div class=\"gjs-placeholder-int\"></div>");
@@ -531,7 +534,7 @@ var tools;
     class Resizer extends JSContainer {
         constructor(name) {
             super(name, "div");
-            /*private*/ this.resizerC = new JSContainer("c", "div");
+            this.resizerC = new JSContainer("c", "div");
             this.resizerC.addClass("gjs-resizer-c");
             for (let index136 = 0; index136 < Resizer.POSITIONS_$LI$().length; index136++) {
                 let s = Resizer.POSITIONS_$LI$()[index136];
@@ -540,9 +543,9 @@ var tools;
                 }
             }
         }
-        static POSITIONS_$LI$() { if (Resizer.POSITIONS == null)
-            Resizer.POSITIONS = ["tl", "tc", "tr", "cl", "cr", "bl", "bc", "br"]; return Resizer.POSITIONS; }
-        ;
+        static POSITIONS_$LI$() { if (Resizer.POSITIONS == null) {
+            Resizer.POSITIONS = ["tl", "tc", "tr", "cl", "cr", "bl", "bc", "br"];
+        } return Resizer.POSITIONS; }
     }
     tools.Resizer = Resizer;
     Resizer["__class"] = "framework.components.editor.tools.Resizer";
@@ -552,20 +555,27 @@ var tools;
     class SelectTools extends JSContainer {
         constructor(name) {
             super(name, "div");
-            if (this.badge === undefined)
+            if (this.badge === undefined) {
                 this.badge = null;
-            if (this.ghost === undefined)
+            }
+            if (this.ghost === undefined) {
                 this.ghost = null;
-            if (this.blockToolbar === undefined)
+            }
+            if (this.blockToolbar === undefined) {
                 this.blockToolbar = null;
-            if (this.resizer === undefined)
+            }
+            if (this.resizer === undefined) {
                 this.resizer = null;
-            if (this.offsetV === undefined)
+            }
+            if (this.offsetV === undefined) {
                 this.offsetV = null;
-            if (this.offsetFixedV === undefined)
+            }
+            if (this.offsetFixedV === undefined) {
                 this.offsetFixedV = null;
-            if (this.textToolbar === undefined)
+            }
+            if (this.textToolbar === undefined) {
                 this.textToolbar = null;
+            }
             this.addClass("se-gjs-tools");
             this.badge = this.addChild("badge", "div", "gjs-badge");
             this.ghost = this.addChild("ghost", "div", "gjs-ghost");
@@ -615,13 +625,13 @@ var tools;
     class TextToolbar extends JSContainer {
         constructor(name) {
             super(name, "div");
-            /*private*/ this.actionBar = new JSContainer("actionBar", "div");
+            this.actionBar = new JSContainer("actionBar", "div");
             this.addClass("gjs-rte-toolbar gjs-one-bg");
             this.actionBar.addClass("gjs-rte-actionbar");
             this.addChild(this.actionBar);
         }
         addAction(name, title, innerHtml, event) {
-            let action = new JSContainer(name, "span").addClass("gjs-rte-action").setHtml(innerHtml);
+            const action = new JSContainer(name, "span").addClass("gjs-rte-action").setHtml(innerHtml);
             this.actionBar.addChild(action);
             action.setAttribute("title", title);
             action.addEventListener(new TextToolbar.TextToolbar$0(this, event), "click");
@@ -642,7 +652,7 @@ var tools;
              * @param {Event} evt
              */
             performAction(source, evt) {
-                let editor = (source.getAncestorWithClass("editor"));
+                const editor = (source.getAncestorWithClass("editor"));
                 this.event(source, editor);
             }
         }

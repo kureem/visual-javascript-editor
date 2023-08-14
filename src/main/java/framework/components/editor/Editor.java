@@ -20,6 +20,7 @@ public class Editor extends JSContainer{
 		super(name, "div");
 		addClass("gjs-editor gjs-one-bg gjs-two-color");
 		addClass("editor");
+		
 		init();
 	}
 	

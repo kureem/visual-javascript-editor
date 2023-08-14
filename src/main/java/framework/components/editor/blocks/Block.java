@@ -14,15 +14,18 @@ public class Block extends JSContainer{
 		addChild(html);
 		title.addClass("gjs-block-label");
 		addChild(title);
+		
 	}
 	
 	public Block(Object block) {
 		this((String)block.$get("name"));
 		setBlock(block);
+		addClass("hello");
 	}
 	
 	
 	public void setBlock(Object obj) {
+		
 		String title = (String)obj.$get("title");
 		this.title.setHtml(title);
 		if(obj.hasOwnProperty("iconName")) {
